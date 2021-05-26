@@ -1,2 +1,2 @@
 # trendfollower-django-app
-Web application arm oof trend following alpaca trading app for performance history reporting and community collaboration
+Web application branch of alpaca trend following system for performance reporting and community participation.
