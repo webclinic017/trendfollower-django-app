@@ -5,8 +5,8 @@ from django.db import models
 # code for storing data in a database
 
 
-class Date(models.Model):
-    date = models.DateField(max_length=255)
+class DateTradePlace(models.Model):
+    date_placed = models.DateField(max_length=255)
 
 
 class Trade(models.Model):
@@ -18,4 +18,4 @@ class Trade(models.Model):
     share_price = models.FloatField()
     cost_basis = models.FloatField()
     pnl = models.FloatField()
-    date = models.ForeignKey(Date, on_delete=models.CASCADE)
+    date_placed = models.ForeignKey(DateTradePlace, on_delete=models.CASCADE)
