@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 # By inheriting from the Models class, we don't have to write a bunch of
@@ -19,3 +20,4 @@ class Trade(models.Model):
     cost_basis = models.FloatField()
     pnl = models.FloatField()
     date_placed = models.ForeignKey(DateTradePlace, on_delete=models.CASCADE)
+    date_created = models.DateTimeField(default=timezone.now)
