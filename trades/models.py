@@ -9,6 +9,9 @@ from django.utils import timezone
 class Date(models.Model):
     date_placed = models.DateField(max_length=255)
 
+    def __str__(self):
+        return str(self.date_placed)
+
 
 class Trade(models.Model):
     open_close = models.CharField(max_length=255)
@@ -18,6 +21,6 @@ class Trade(models.Model):
     quantity = models.IntegerField()
     share_price = models.FloatField()
     cost_basis = models.FloatField()
-    pnl = models.FloatField()
+    pnl = models.FloatField(blank=True, null=True)
     date_placed = models.ForeignKey(Date, on_delete=models.CASCADE)
     date_created = models.DateTimeField(default=timezone.now)
