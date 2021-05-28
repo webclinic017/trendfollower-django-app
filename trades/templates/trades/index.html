@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Open/Close</th>
+                <th>Side</th>
+                <th>Type</th>
+                <th>Quantity</th>
+                <th>Share Price</th>
+                <th>Cost Basis</th>
+                <th>PnL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for trade in trades %}
+                <tr>
+                    <td>{{ trade.symbol }}</td>
+                    <td>{{ trade.open_close }}</td>
+                    <td>{{ trade.side }}</td>
+                    <td>{{ trade.type }}</td>
+                    <td>{{ trade.quantity }}</td>
+                    <td>{{ trade.share_price }}</td>
+                    <td>{{ trade.cost_basis }}</td>
+                    <td>{{ trade.pnl }}</td>
+                </tr>     
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock  %}

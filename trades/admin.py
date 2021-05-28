@@ -15,6 +15,7 @@ class TradeAdmin(admin.ModelAdmin):
         'cost_basis',
         'pnl'
     )
+    exclude = ('date_created', )
 
 
 # Register your models here.
